@@ -15,10 +15,8 @@
    </script>
    <script>
       sap.ui.getCore().attachInit(function () {
-         new sap.m.Shell({
-            app: new sap.ui.core.ComponentContainer({
-               name: "OpenUI5"
-            })
+         app: new sap.ui.core.ComponentContainer({
+            name: "OpenUI5"
          }).placeAt("content");
       });
    </script>

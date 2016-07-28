@@ -7,7 +7,7 @@ sap.ui.define([
       metadata : {
          rootView : {
             type : sap.ui.core.mvc.ViewType.JS,
-            viewName : "OpenUI5.view.SideNavigation"
+            viewName : "OpenUI5.view.App"
          }
          // manifest : "json"
       },

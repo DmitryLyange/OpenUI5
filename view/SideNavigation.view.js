@@ -5,17 +5,10 @@ sap.ui.jsview("OpenUI5.view.SideNavigation", {
    },
 
    createContent : function(oController) {
-      var oButton = new sap.m.Button({
+      return oButton = new sap.m.Button({
           text: "Toggle Collapse/Exapand",
           icon: "sap-icon://menu2",
           press: [oController.onTest, oController]
-      });
-
-      return new sap.m.Page({
-         title: "Title",
-         content: [
-            oButton
-         ]
       });
    }
 });
