@@ -1,7 +1,7 @@
-sap.ui.jsview("view.SideNavigation", {
+sap.ui.jsview("OpenUI5.view.SideNavigation", {
 
    getControllerName : function() {
-      return "sap.ui.test.controller.SideNavigation";
+      return "OpenUI5.controller.SideNavigation";
    },
 
    createContent : function(oController) {

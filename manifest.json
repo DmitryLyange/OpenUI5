@@ -1,0 +1,39 @@
+{
+   "_version": "1.0.0",
+   "sap.app": {
+      "_version": "1.0.0",
+      "id": "OpenUI5",
+      "type": "application",
+      "title": "{{Tracker}}",
+      "description": "{{Description}}",
+      "applicationVersion": {
+         "version": "1.0.0"
+      }
+   },
+   "sap.ui": {
+      "_version": "1.0.0",
+      "technology": "UI5",
+      "deviceTypes": {
+         "desktop": true,
+         "tablet": true,
+         "phone": true
+      },
+      "supportedThemes": [
+         "sap_bluecrystal"
+      ]
+   },
+   "sap.ui5": {
+      "_version": "1.0.0",
+      "rootView": {
+         "viewName" : "OpenUI5.view.App",
+         "type" : "sap.ui.core.mvc.ViewType.JS"
+      },
+      "dependencies": {
+         "minUI5Version": "1.30",
+         "libs": {
+            "sap.m": {}
+         }
+      },
+      "models": {}
+   }
+}
