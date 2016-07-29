@@ -10,21 +10,37 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
       sap.ui.getCore().setModel(oTaskModel, "tasksData");
 
       var oList = new sap.m.List({
-         width: "auto"
+         width: "auto",
+         items: [
+            new sap.m.ObjectListItem({
+              title: "21"
+            }),
+            new sap.m.ObjectListItem({
+              title: "22"
+            })
+         ]
       });
 
-      oList.bindItems({
-         path : "tasksData",
-         sorter : new sap.ui.model.Sorter("title"),
-         template : new sap.m.StandardListItem({
-            title: "{Title}",
-            description: "{Priority}",
-            type: sap.m.ListType.Navigation
-         })
+      var oList2 = new sap.m.List({
+
       });
+      var oItemTemplate = new sap.m.ObjectListItem({title:"{name}"});
+      oList2.bindItems("tasksData", oItemTemplate);
+      //oList.bindAggregation("items", "/tasksData", new sap.ui.core.ListItem({text:"{Title}"}));
+
+      // oList.bindItems({
+      //    path : "tasksData",
+      //    sorter : new sap.ui.model.Sorter("title"),
+      //    template : new sap.m.StandardListItem({
+      //       title: "{Title}",
+      //       description: "{Priority}",
+      //       type: sap.m.ListType.Navigation
+      //    })
+      // });
 
       return [
-         oList
+         oList,
+         oList2
       ]
    }
 });
