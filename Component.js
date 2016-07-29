@@ -12,7 +12,7 @@ sap.ui.define([
          // manifest : "json"
       },
 
-      init : function () {
+      init: function () {
          UIComponent.prototype.init.apply(this, arguments);
       }
    });

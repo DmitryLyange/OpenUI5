@@ -7,12 +7,8 @@ sap.ui.define([
 
       onInit: function () {},
 
-      onTest : function () {
-         alert("Test");
-      },
-
-      onCollapseExapandPress: function (event) {
-         var navigationList = this.getView().byId('navigationList');
+      onCollapseExpandPress: function (event) {
+         var navigationList = this.getView().byId('sideNavigation');
          var expanded = !navigationList.getExpanded();
 
          navigationList.setExpanded(expanded);
