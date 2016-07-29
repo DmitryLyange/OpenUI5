@@ -4,12 +4,8 @@ sap.ui.define([
    "use strict";
    return UIComponent.extend("OpenUI5.Component", {
 
-      metadata : {
-         rootView : {
-            type : sap.ui.core.mvc.ViewType.JS,
-            viewName : "OpenUI5.view.App"
-         }
-         // manifest : "json"
+      metadata: {
+         manifest: "json"
       },
 
       init: function () {

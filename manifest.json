@@ -4,8 +4,6 @@
       "_version": "1.0.0",
       "id": "OpenUI5",
       "type": "application",
-      "title": "{{Tracker}}",
-      "description": "{{Description}}",
       "applicationVersion": {
          "version": "1.0.0"
       }
@@ -26,14 +24,20 @@
       "_version": "1.0.0",
       "rootView": {
          "viewName" : "OpenUI5.view.App",
-         "type" : "sap.ui.core.mvc.ViewType.JS"
+         "type" : "JS"
       },
       "dependencies": {
          "minUI5Version": "1.30",
          "libs": {
-            "sap.m": {}
+            "sap.m": {},
+            "sap.tnt": {}
          }
       },
-      "models": {}
+      "models": {
+         "tasksData": {
+            "type": "sap.ui.model.json.JSONModel",
+            "uri": "model/TasksData.json"
+         }
+      }
    }
 }
