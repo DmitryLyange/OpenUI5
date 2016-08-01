@@ -9,28 +9,43 @@ sap.ui.define([
       onInit: function () {
          var oData = [{
             "Title": "Test1",
-            "Priority": "21",
-            "CheckBox": true
+            "Priority": "Text1",
+            "CheckBox": true,
+            "Quantity": 21,
+            "ExtendedPrice": 87.2000,
+            "Date": "2015-04-01T00:00:00"
          },
          {
             "Title": "Test1",
-            "Priority": "4",
-            "CheckBox": true
+            "Priority": "Text2",
+            "CheckBox": true,
+            "Quantity": 4,
+            "ExtendedPrice": 9.99999,
+            "Date": "2015-02-18T00:00:00"
          },
          {
             "Title": "Test1",
-            "Priority": "3",
-            "CheckBox": false
+            "Priority": "Text3",
+            "CheckBox": false,
+            "Quantity": 3,
+            "ExtendedPrice": 6.85000,
+            "Date": "2015-03-02T00:00:00"
          },
          {
             "Title": "Test1",
-            "Priority": "2",
-            "CheckBox": false
+            "Priority": "Text4",
+            "CheckBox": false,
+            "Quantity": 2,
+            "ExtendedPrice": 8.8000,
+            "Date": "2015-04-12T00:00:00"
          },
          {
             "Title": "Test1",
-            "Priority": "1",
-            "CheckBox": true
+            "Priority": "Test text5",
+            "CheckBox": true,
+            "Quantity": 1,
+            "ExtendedPrice": 2.71212,
+            "Date": "2015-01-27T00:00:00"
          }];
 
         //  var oModel = new JSONModel();

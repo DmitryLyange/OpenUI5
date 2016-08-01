@@ -21,8 +21,12 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
         template: new sap.m.Input({value: "{Priority}"})
       }));
       oTable.addColumn(new sap.ui.table.Column({
-        label: new sap.m.Label({text: "Test1"}),
-        template: new sap.m.CheckBox({checked: '{CheckBox}'})
+        label: new sap.m.Label({text: "Boolean"}),
+        template: new sap.m.CheckBox({checked: "{CheckBox}"})
+      }));
+      oTable.addColumn(new sap.ui.table.Column({
+        label: new sap.m.Label({text: "Number"}),
+        template: new sap.m.Text({text: "{Quantity}"})
       }));
 
       oTable.bindRows("/");

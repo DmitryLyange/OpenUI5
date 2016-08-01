@@ -6,6 +6,7 @@ sap.ui.jsview("OpenUI5.view.Toolbar", {
 
    createContent: function(oController) {
      var oToolbar = new sap.m.Toolbar({
+        active: true,
         content: [
            new sap.m.Label({
               text: "testToolbar1"
