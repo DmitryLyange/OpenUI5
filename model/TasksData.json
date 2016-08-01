@@ -3,26 +3,31 @@
    {
       "Title": "Test1",
       "Priority": 21,
+      "CheckBox": true,
       "Due Date": "2015-04-01T00:00:00"
    },
    {
       "Title": "Test1",
       "Priority": 4,
+      "CheckBox": true,
       "Due Date": "2015-02-18T00:00:00"
    },
    {
       "Title": "Test1",
       "Priority": 3,
+      "CheckBox": false,
       "Due Date": "2015-03-02T00:00:00"
    },
    {
       "Title": "Test1",
       "Priority": 2,
+      "CheckBox": false,
       "Due Date": "2015-04-12T00:00:00"
    },
    {
       "Title": "Test1",
       "Priority": 1,
+      "CheckBox": true,
       "Due Date": "2015-01-27T00:00:00"
    }
    ]

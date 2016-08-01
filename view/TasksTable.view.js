@@ -1,3 +1,5 @@
+jQuery.sap.require("sap.ui.table.Table");
+
 sap.ui.jsview("OpenUI5.view.TasksTable", {
 
    getControllerName: function() {
@@ -5,42 +7,28 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
    },
 
    createContent: function(oController) {
-      var oTaskModel = new sap.ui.model.json.JSONModel();
-      oTaskModel.loadData("./model/TasksData.json");
-      sap.ui.getCore().setModel(oTaskModel, "tasksData");
-
-      var oList = new sap.m.List({
-         width: "auto",
-         items: [
-            new sap.m.ObjectListItem({
-              title: "21"
-            }),
-            new sap.m.ObjectListItem({
-              title: "22"
-            })
-         ]
+      var oTable = new sap.ui.table.Table("oTable", {
+          selectionMode : sap.ui.table.SelectionMode.Single,
+          selectionBehavior: sap.ui.table.SelectionBehavior.Row
       });
 
-      var oList2 = new sap.m.List({
+      oTable.addColumn(new sap.ui.table.Column({
+        label: new sap.m.Label({text: "LongText"}),
+        template: new sap.m.Text({text:"{Title}"})
+      }));
+      oTable.addColumn(new sap.ui.table.Column({
+        label: new sap.m.Label({text: "Text"}),
+        template: new sap.m.Input({value: "{Priority}"})
+      }));
+      oTable.addColumn(new sap.ui.table.Column({
+        label: new sap.m.Label({text: "Test1"}),
+        template: new sap.m.CheckBox({checked: '{CheckBox}'})
+      }));
 
-      });
-      var oItemTemplate = new sap.m.ObjectListItem({title:"{name}"});
-      oList2.bindItems("tasksData", oItemTemplate);
-      //oList.bindAggregation("items", "/tasksData", new sap.ui.core.ListItem({text:"{Title}"}));
-
-      // oList.bindItems({
-      //    path : "tasksData",
-      //    sorter : new sap.ui.model.Sorter("title"),
-      //    template : new sap.m.StandardListItem({
-      //       title: "{Title}",
-      //       description: "{Priority}",
-      //       type: sap.m.ListType.Navigation
-      //    })
-      // });
+      oTable.bindRows("/");
 
       return [
-         oList,
-         oList2
+         oTable
       ]
    }
 });
