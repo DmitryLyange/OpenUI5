@@ -53,7 +53,6 @@ sap.ui.define([
       },
 
       onRowSelectionChange : function (oEvent) {
-         debugger;
          var currentRowIndex = oEvent.getParameter("rowIndex");
 
          var oModel = this.getView().getModel();
