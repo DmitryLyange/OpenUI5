@@ -7,7 +7,7 @@ sap.ui.jsview("OpenUI5.view.App", {
    },
 
    createContent: function(oController) {
-      var toolbar = new sap.m.Page("toolbarPage", {
+      var oToolbar = new sap.m.Page("toolbar", {
          title: "Toolbar",
          content: [
             new sap.m.Panel({
@@ -21,7 +21,7 @@ sap.ui.jsview("OpenUI5.view.App", {
          ]
       });
 
-      var menu = new sap.m.Page("menuPage", {
+      var oMenu = new sap.m.Page("menu", {
          title: "Menu",
          headerContent: [],
          content: [
@@ -36,7 +36,7 @@ sap.ui.jsview("OpenUI5.view.App", {
          ]
       });
 
-      var table = new sap.m.Page("tablePage", {
+      var oTasksTableForm = new sap.m.Page("tasksTableForm", {
          title: "Table",
          headerContent: [],
          content: [
@@ -44,56 +44,33 @@ sap.ui.jsview("OpenUI5.view.App", {
                content: [
                   new sap.ui.view({
                      type: sap.ui.core.mvc.ViewType.JS,
-                     viewName: "OpenUI5.view.TasksTable"
+                     viewName: "OpenUI5.view.TasksTableForm"
                   })
                ]
             }),
          ]
       });
 
-      var form = new sap.m.Page("formPage", {
-         title: "Form",
-         headerContent: [],
-         content: [
-            new sap.m.Panel({
-               content: [
-                  new sap.ui.view({
-                     type: sap.ui.core.mvc.ViewType.JS,
-                     viewName: "OpenUI5.view.Form"
-                  })
-               ]
-            }),
-         ]
-      });
-
-
-      var splitterHorizontal = new sap.ui.layout.Splitter("splitterHorizontal", {
-         contentAreas: [
-            table,
-            form
-         ]
-      });
-
-      var splitContainer = new sap.m.SplitContainer("splitContainer", {
+      var oSplitContainer = new sap.m.SplitContainer("splitContainer", {
          masterPages: [
-            menu
+            oMenu
          ],
          detailPages: [
-            splitterHorizontal
+            oTasksTableForm
          ]
       });
 
-      var splitterVertical = new sap.ui.layout.Splitter("splitterVertical", {
+      var oSplitterVertical = new sap.ui.layout.Splitter("splitterVertical", {
          orientation: sap.ui.core.Orientation.Vertical,
          contentAreas: [
-            toolbar,
-            splitContainer
+            oToolbar,
+            oSplitContainer
          ]
       });
 
       return application = new sap.m.App("application", {
          pages: [
-            splitterVertical
+            oSplitterVertical
          ]
       });
    }

@@ -4,6 +4,5 @@ sap.ui.jsview("OpenUI5.view.Form", {
       return "OpenUI5.controller.Form";
    },
 
-   createContent: function(oController) {
-   }
+   createContent: function(oController) {}
 });

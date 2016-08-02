@@ -35,6 +35,6 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
 
       return [
          oTable
-      ]
+      ];
    }
 });

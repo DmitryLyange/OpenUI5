@@ -48,6 +48,6 @@ sap.ui.jsview("OpenUI5.view.SideNavigation", {
       return [
          oSideNavigationButton,
          oSideNavigation
-      ]
+      ];
    }
 });
