@@ -1,4 +1,5 @@
 jQuery.sap.require("sap.ui.table.Table");
+jQuery.sap.require("sap.m.ListBase");
 
 sap.ui.jsview("OpenUI5.view.TasksTable", {
 
@@ -8,25 +9,26 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
 
    createContent: function(oController) {
       var oTable = new sap.ui.table.Table("oTable", {
-          selectionMode : sap.ui.table.SelectionMode.Single,
-          selectionBehavior: sap.ui.table.SelectionBehavior.Row
+         selectionMode: sap.ui.table.SelectionMode.Single,
+         selectionBehavior: sap.ui.table.SelectionBehavior.Row,
+         press: [oController.onSelectionChange, oController]
       });
 
       oTable.addColumn(new sap.ui.table.Column({
-        label: new sap.m.Label({text: "LongText"}),
-        template: new sap.m.Text({text:"{Title}"})
+         label: new sap.m.Label({text: "LongText"}),
+         template: new sap.m.Text({text: "{Title}"})
       }));
       oTable.addColumn(new sap.ui.table.Column({
-        label: new sap.m.Label({text: "Text"}),
-        template: new sap.m.Input({value: "{Priority}"})
+         label: new sap.m.Label({text: "Text"}),
+         template: new sap.m.Input({value: "{Priority}"})
       }));
       oTable.addColumn(new sap.ui.table.Column({
-        label: new sap.m.Label({text: "Boolean"}),
-        template: new sap.m.CheckBox({checked: "{CheckBox}"})
+         label: new sap.m.Label({text: "Boolean"}),
+         template: new sap.m.CheckBox({checked: "{CheckBox}"})
       }));
       oTable.addColumn(new sap.ui.table.Column({
-        label: new sap.m.Label({text: "Number"}),
-        template: new sap.m.Text({text: "{Quantity}"})
+         label: new sap.m.Label({text: "Number"}),
+         template: new sap.m.Text({text: "{Quantity}"})
       }));
 
       oTable.bindRows("/");

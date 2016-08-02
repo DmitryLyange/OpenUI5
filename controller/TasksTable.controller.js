@@ -53,6 +53,10 @@ sap.ui.define([
 
          var oModel = new JSONModel(oData);
          this.getView().setModel(oModel);
-      }
+         
+         //sap.ui.getCore().setModel(oModel);
+      },
+
+      onSelectionChange : function (oEvent) {}
    });
 });

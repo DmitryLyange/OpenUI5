@@ -10,10 +10,10 @@ sap.ui.jsview("OpenUI5.view.SideNavigation", {
       var oSideNavigationButton = new sap.m.Button({
          text: "Toggle Collapse/Expand",
          icon: "sap-icon://menu2",
-         press: [oController.onTest, oController]
+         press: [oController.onCollapseExpandPress, oController]
       });
 
-      var oSideNavigation = new sap.tnt.SideNavigation("sideNavigation1", {
+      var oSideNavigation = new sap.tnt.SideNavigation("sideNavigation", {
          item: [
             new sap.tnt.NavigationList({
                items: [
@@ -46,7 +46,7 @@ sap.ui.jsview("OpenUI5.view.SideNavigation", {
       });
 
       return [
-         //oSideNavigationButton,
+         oSideNavigationButton,
          oSideNavigation
       ]
    }
