@@ -11,7 +11,7 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
       var oTable = new sap.ui.table.Table("oTable", {
          selectionMode: sap.ui.table.SelectionMode.Single,
          selectionBehavior: sap.ui.table.SelectionBehavior.Row,
-         press: [oController.onSelectionChange, oController]
+         rowSelectionChange: [oController.onRowSelectionChange, oController]
       });
 
       oTable.addColumn(new sap.ui.table.Column({
@@ -33,8 +33,32 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
 
       oTable.bindRows("/");
 
+      var changeButton = new sap.m.Button({
+         text: "Change value",
+         icon: "sap-icon://menu2",
+         press: [oController.onChangeButton, oController]
+      });
+
+      var longTextInput = new sap.m.Input("longTextInput", {
+         value: ""
+      });
+
+      var oForm = new sap.m.Panel({
+         content: [
+            changeButton,
+            longTextInput,
+         ]
+      });
+
+      var oSplitterHorizontal = new sap.ui.layout.Splitter("splitterHorizontal", {
+         contentAreas: [
+            oTable,
+            oForm
+         ]
+      });
+
       return [
-         oTable
+         oSplitterHorizontal
       ];
    }
 });

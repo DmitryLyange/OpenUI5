@@ -44,7 +44,7 @@ sap.ui.jsview("OpenUI5.view.App", {
                content: [
                   new sap.ui.view({
                      type: sap.ui.core.mvc.ViewType.JS,
-                     viewName: "OpenUI5.view.TasksTableForm"
+                     viewName: "OpenUI5.view.TasksTable"
                   })
                ]
             }),

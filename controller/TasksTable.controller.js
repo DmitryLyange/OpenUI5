@@ -27,7 +27,7 @@ sap.ui.define([
             "Title": "Test1",
             "Priority": "Text3",
             "CheckBox": false,
-            "Quantity": 3,
+            "Quantity": 35,
             "ExtendedPrice": 6.85000,
             "Date": "2015-03-02T00:00:00"
          },
@@ -35,7 +35,7 @@ sap.ui.define([
             "Title": "Test1",
             "Priority": "Text4",
             "CheckBox": false,
-            "Quantity": 2,
+            "Quantity": 12,
             "ExtendedPrice": 8.8000,
             "Date": "2015-04-12T00:00:00"
          },
@@ -48,15 +48,26 @@ sap.ui.define([
             "Date": "2015-01-27T00:00:00"
          }];
 
-        //  var oModel = new JSONModel();
-        //  oModel.loadData("model/TasksData.json");
-
          var oModel = new JSONModel(oData);
          this.getView().setModel(oModel);
-         
-         //sap.ui.getCore().setModel(oModel);
       },
 
-      onSelectionChange : function (oEvent) {}
+      onRowSelectionChange : function (oEvent) {
+         debugger;
+         var currentRowIndex = oEvent.getParameter("rowIndex");
+
+         var oModel = this.getView().getModel();
+         var currentRowData = oModel.getProperty("/" + currentRowIndex);
+
+         var longTextInput = sap.ui.getCore().byId("longTextInput");
+         longTextInput.setValue(currentRowData.Priority);
+      },
+
+      onChangeButton: function (oEvent) {
+         var oModel = this.getView().getModel();
+         var test1 = oModel.getProperty("/0/Priority");
+         test1 = "New sentence";
+         oModel.setProperty("/0/Priority", test1);
+      }
    });
 });
