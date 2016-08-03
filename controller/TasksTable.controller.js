@@ -54,6 +54,7 @@ sap.ui.define([
 
       onRowSelectionChange : function (oEvent) {
          var currentRowIndex = oEvent.getParameter("rowIndex");
+         this.testingParam = currentRowIndex;
 
          var oModel = this.getView().getModel();
          var currentRowData = oModel.getProperty("/" + currentRowIndex);
@@ -63,10 +64,15 @@ sap.ui.define([
       },
 
       onChangeButton: function (oEvent) {
-         var oModel = this.getView().getModel();
-         var test1 = oModel.getProperty("/0/Priority");
-         test1 = "New sentence";
-         oModel.setProperty("/0/Priority", test1);
+         var currentRowIndex = this.testingParam;
+
+         if (currentRowIndex) {
+            var longTextInput = sap.ui.getCore().byId("longTextInput");
+            var longTextInputValue = longTextInput.getValue();
+
+            var oModel = this.getView().getModel();
+            oModel.setProperty("/" + currentRowIndex + "/Priority", longTextInputValue);
+         }
       }
    });
 });

@@ -20,7 +20,7 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
       }));
       oTable.addColumn(new sap.ui.table.Column({
          label: new sap.m.Label({text: "Text"}),
-         template: new sap.m.Input({value: "{Priority}"})
+         template: new sap.m.Text({text: "{Priority}"})
       }));
       oTable.addColumn(new sap.ui.table.Column({
          label: new sap.m.Label({text: "Boolean"}),
@@ -34,7 +34,7 @@ sap.ui.jsview("OpenUI5.view.TasksTable", {
       oTable.bindRows("/");
 
       var changeButton = new sap.m.Button({
-         text: "Change value",
+         text: "Change 'Text' value",
          icon: "sap-icon://menu2",
          press: [oController.onChangeButton, oController]
       });
